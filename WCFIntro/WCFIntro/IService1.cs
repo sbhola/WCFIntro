@@ -15,18 +15,24 @@ namespace WCFIntro
         ComplexNumber CreateComplexNumber(int a, int b);
 
         [OperationContract]
-        string GetData(int value);        
+        string GetData(int value);
 
         [OperationContract]
         int GetRealPart(ComplexNumber complex);
 
         [OperationContract]
         int GetImagPart(ComplexNumber complex);
+
+        [OperationContract]
+        void AddToList(ComplexNumber complex);
+
+        [OperationContract]
+        List<ComplexNumber> GetComplexNumList();
     }
 
     [DataContract]
     public class ComplexNumber
-    {        
+    {
         public ComplexNumber(int a, int b)
         {
             RealPart = a;

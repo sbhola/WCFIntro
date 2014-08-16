@@ -248,6 +248,82 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICalcService_AddToList_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICalcService_AddToList_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICalcService_GetComplexNumList_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICalcService_GetComplexNumList_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:60797/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -279,6 +355,18 @@
   <wsdl:message name="ICalcService_GetImagPart_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetImagPartResponse" />
   </wsdl:message>
+  <wsdl:message name="ICalcService_AddToList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToList" />
+  </wsdl:message>
+  <wsdl:message name="ICalcService_AddToList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalcService_GetComplexNumList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComplexNumList" />
+  </wsdl:message>
+  <wsdl:message name="ICalcService_GetComplexNumList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComplexNumListResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICalcService">
     <wsdl:operation name="CreateComplexNumber">
       <wsdl:input wsaw:Action="http://tempuri.org/ICalcService/CreateComplexNumber" message="tns:ICalcService_CreateComplexNumber_InputMessage" />
@@ -295,6 +383,14 @@
     <wsdl:operation name="GetImagPart">
       <wsdl:input wsaw:Action="http://tempuri.org/ICalcService/GetImagPart" message="tns:ICalcService_GetImagPart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICalcService/GetImagPartResponse" message="tns:ICalcService_GetImagPart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalcService/AddToList" message="tns:ICalcService_AddToList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalcService/AddToListResponse" message="tns:ICalcService_AddToList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComplexNumList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalcService/GetComplexNumList" message="tns:ICalcService_GetComplexNumList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalcService/GetComplexNumListResponse" message="tns:ICalcService_GetComplexNumList_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICalcService" type="tns:ICalcService">
@@ -328,6 +424,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetImagPart">
       <soap:operation soapAction="http://tempuri.org/ICalcService/GetImagPart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToList">
+      <soap:operation soapAction="http://tempuri.org/ICalcService/AddToList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComplexNumList">
+      <soap:operation soapAction="http://tempuri.org/ICalcService/GetComplexNumList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -380,6 +494,28 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_ICalcService_GetImagPart_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToList">
+      <soap12:operation soapAction="http://tempuri.org/ICalcService/AddToList" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICalcService_AddToList_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICalcService_AddToList_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComplexNumList">
+      <soap12:operation soapAction="http://tempuri.org/ICalcService/GetComplexNumList" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICalcService_GetComplexNumList_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICalcService_GetComplexNumList_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

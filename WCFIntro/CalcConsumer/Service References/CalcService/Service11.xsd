@@ -58,4 +58,28 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="AddToList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCFIntro" minOccurs="0" name="complex" nillable="true" type="q4:ComplexNumber" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddToListResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplexNumList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplexNumListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WCFIntro" minOccurs="0" name="GetComplexNumListResult" nillable="true" type="q5:ArrayOfComplexNumber" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

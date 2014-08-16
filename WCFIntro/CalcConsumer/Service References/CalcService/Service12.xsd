@@ -7,4 +7,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ComplexNumber" nillable="true" type="tns:ComplexNumber" />
+  <xs:complexType name="ArrayOfComplexNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComplexNumber" nillable="true" type="tns:ComplexNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComplexNumber" nillable="true" type="tns:ArrayOfComplexNumber" />
 </xs:schema>

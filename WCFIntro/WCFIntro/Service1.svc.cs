@@ -10,6 +10,18 @@ namespace WCFIntro
 {
     public class CalculatorService : ICalcService
     {
+        private List<ComplexNumber> _compList = new List<ComplexNumber>();
+
+        public void AddToList(ComplexNumber complex)
+        {
+            _compList.Add(complex);
+        }
+
+        public List<ComplexNumber> GetComplexNumList()
+        {
+            return _compList;
+        }
+
         public ComplexNumber CreateComplexNumber(int a, int b)
         {
             ComplexNumber compObj = new ComplexNumber(a, b);
@@ -19,7 +31,7 @@ namespace WCFIntro
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
-        }        
+        }
 
         public int GetRealPart(ComplexNumber complex)
         {

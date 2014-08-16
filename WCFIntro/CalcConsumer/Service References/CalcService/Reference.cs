@@ -101,6 +101,18 @@ namespace CalcConsumer.CalcService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalcService/GetImagPart", ReplyAction="http://tempuri.org/ICalcService/GetImagPartResponse")]
         System.Threading.Tasks.Task<int> GetImagPartAsync(CalcConsumer.CalcService.ComplexNumber complex);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalcService/AddToList", ReplyAction="http://tempuri.org/ICalcService/AddToListResponse")]
+        void AddToList(CalcConsumer.CalcService.ComplexNumber complex);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalcService/AddToList", ReplyAction="http://tempuri.org/ICalcService/AddToListResponse")]
+        System.Threading.Tasks.Task AddToListAsync(CalcConsumer.CalcService.ComplexNumber complex);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalcService/GetComplexNumList", ReplyAction="http://tempuri.org/ICalcService/GetComplexNumListResponse")]
+        CalcConsumer.CalcService.ComplexNumber[] GetComplexNumList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalcService/GetComplexNumList", ReplyAction="http://tempuri.org/ICalcService/GetComplexNumListResponse")]
+        System.Threading.Tasks.Task<CalcConsumer.CalcService.ComplexNumber[]> GetComplexNumListAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -160,6 +172,22 @@ namespace CalcConsumer.CalcService {
         
         public System.Threading.Tasks.Task<int> GetImagPartAsync(CalcConsumer.CalcService.ComplexNumber complex) {
             return base.Channel.GetImagPartAsync(complex);
+        }
+        
+        public void AddToList(CalcConsumer.CalcService.ComplexNumber complex) {
+            base.Channel.AddToList(complex);
+        }
+        
+        public System.Threading.Tasks.Task AddToListAsync(CalcConsumer.CalcService.ComplexNumber complex) {
+            return base.Channel.AddToListAsync(complex);
+        }
+        
+        public CalcConsumer.CalcService.ComplexNumber[] GetComplexNumList() {
+            return base.Channel.GetComplexNumList();
+        }
+        
+        public System.Threading.Tasks.Task<CalcConsumer.CalcService.ComplexNumber[]> GetComplexNumListAsync() {
+            return base.Channel.GetComplexNumListAsync();
         }
     }
 }

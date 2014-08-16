@@ -27,12 +27,24 @@ namespace CalcConsumer
             {
                 Console.WriteLine("Communicate with secure endpoint.");
 
-                var complexNum = secureClient.CreateComplexNumber(4, 5);
-                Console.WriteLine(secureClient.GetRealPart(complexNum));
+                var complexNum1 = secureClient.CreateComplexNumber(4, 5);
+                Console.WriteLine(secureClient.GetRealPart(complexNum1));
 
-                Console.WriteLine(secureClient.GetImagPart(complexNum));
+                Console.WriteLine(secureClient.GetImagPart(complexNum1));
 
                 Console.WriteLine(secureClient.GetData(100));
+
+                var complexNum2 = secureClient.CreateComplexNumber(7, 8);
+                Console.WriteLine(secureClient.GetRealPart(complexNum2));
+
+                Console.WriteLine(secureClient.GetImagPart(complexNum2));
+
+                secureClient.AddToList(complexNum1);
+                secureClient.AddToList(complexNum2);
+
+                var listCompNums = secureClient.GetComplexNumList();
+
+
             }
         }
     }
