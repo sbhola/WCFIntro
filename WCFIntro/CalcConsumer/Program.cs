@@ -12,16 +12,28 @@ namespace CalcConsumer
     {
         static void Main(string[] args)
         {
-            using (var client = new CalcServiceClient())
+            //using (var client = new CalcServiceClient())
+            //{
+            //    var complexNum = client.CreateComplexNumber(4, 5);
+            //    Console.WriteLine(client.GetRealPart(complexNum));
+
+            //    Console.WriteLine(client.GetImagPart(complexNum));
+
+            //    Console.WriteLine(client.GetData(100));
+
+            //}
+
+            using (var secureClient = new CalcServiceClient("WSHttpBinding_ICalcService"))
             {
-                var complexNum = client.CreateComplexNumber(4, 5);
-                Console.WriteLine(client.GetRealPart(complexNum));
+                Console.WriteLine("Communicate with secure endpoint.");
 
-                Console.WriteLine(client.GetImagPart(complexNum));
+                var complexNum = secureClient.CreateComplexNumber(4, 5);
+                Console.WriteLine(secureClient.GetRealPart(complexNum));
 
-                Console.WriteLine(client.GetData(100));
+                Console.WriteLine(secureClient.GetImagPart(complexNum));
 
-            }            
+                Console.WriteLine(secureClient.GetData(100));
+            }
         }
     }
 }
